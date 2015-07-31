@@ -21,12 +21,10 @@ class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        do {
-           try audioPlayer = AVAudioPlayer(contentsOfURL: recievedAudio.filePathUrl)
-           try audioFile = AVAudioFile(forReading: recievedAudio.filePathUrl)
-        } catch {
-            
-        }
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL: recievedAudio.filePathUrl, error:nil)
+        audioFile = AVAudioFile(forReading: recievedAudio.filePathUrl, error:nil)
+        
         audioPlayer.enableRate = true
         audioEngine = AVAudioEngine()
         
@@ -74,6 +72,8 @@ class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func stopButton(sender: UIButton) {
         
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
         
     }
     
@@ -96,12 +96,9 @@ class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        do {
-           try  audioEngine.start()
-        }
-        catch {
-            
-        }
+        
+           audioEngine.startAndReturnError(nil)
+        
         audioPlayerNode.play()
     }
     

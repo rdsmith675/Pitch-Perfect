@@ -51,12 +51,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate  {
         print(filePath)
         
         let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
-        } catch {
-            
-        }
+        
+        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error:nil)
+        audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:], error:nil)
+        
         
         audioRecorder.delegate = self
         audioRecorder.meteringEnabled = true
@@ -92,11 +90,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate  {
         recordingInProgress.text = "Done"
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
-        do {
-            try audioSession.setActive(false)
-        } catch {
-            
-        }
+        
+        audioSession.setActive(false, error:nil)
+       
         
     }
     

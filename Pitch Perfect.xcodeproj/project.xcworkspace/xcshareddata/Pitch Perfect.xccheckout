@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8AC34E83-47BD-4F96-A9E8-0FA2113FAF64</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Pitch Perfect</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C201D5CD1389F8A842F7C651E82AD5B2CBF02FD6</key>
 		<string>https://github.com/rdsmith675/Pitch-Perfect.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Pitch Perfect.xcodeproj</string>
+	<string>Pitch Perfect.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C201D5CD1389F8A842F7C651E82AD5B2CBF02FD6</key>

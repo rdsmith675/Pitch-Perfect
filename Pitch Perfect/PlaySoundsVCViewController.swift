@@ -1,5 +1,5 @@
 //
-//  playSoundsVCViewController.swift
+//  PlaySoundsVCViewController.swift
 //  Pitch Perfect
 //
 //  Created by Richard smith on 7/21/15.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
+class PlaySoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
 
     var audioPlayer:AVAudioPlayer!
     var recievedAudio:RecordedAudio!
@@ -38,42 +38,34 @@ class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func slowPlayButton(sender: UIButton) {
         
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        audioPlayer.rate = 0.5
-        audioPlayer.currentTime = 0.0
-        audioPlayer.play()
-        
+
+            resetAudio()
+            playAudioWithVariableRate(0.5)
+    
     }
     
     @IBAction func fastPlayButton(sender: UIButton) {
-        
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        audioPlayer.rate = 2.0
-        audioPlayer.currentTime = 0.0
-        audioPlayer.play()
+      
+            resetAudio()
+            playAudioWithVariableRate(2.0)
         
         
     }
     
     @IBAction func playChipmunkSound(sender: UIButton) {
-    
+        
+            resetAudio()
             playAudioWithVariablePitch(1000)
         
     }
 
     @IBAction func darthVaderSound(sender: UIButton) {
-        
+        resetAudio()
         playAudioWithVariablePitch(-1000)
     }
     @IBAction func stopButton(sender: UIButton) {
         
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+      resetAudio()
         
     }
     
@@ -81,9 +73,6 @@ class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     func playAudioWithVariablePitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -103,12 +92,21 @@ class playSoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
+    func resetAudio() {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+    }
+    
+    func playAudioWithVariableRate(rate: Float) {
+        
+        audioPlayer.currentTime = 0.0
+        var changeAudioRate = audioPlayer
+        changeAudioRate.rate = rate
+        audioPlayer.play()
     
     
-    
-    
-    
-    
+    }
     
     
     

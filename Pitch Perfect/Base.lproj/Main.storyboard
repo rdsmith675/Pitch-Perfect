@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A234d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7N3-Oe-2Ji">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A225f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7N3-Oe-2Ji">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -103,12 +103,12 @@
         <!--Play SoundsVC View Controller-->
         <scene sceneID="eJM-4r-Wj1">
             <objects>
-                <viewController id="PQK-cp-tcU" customClass="playSoundsVCViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PQK-cp-tcU" customClass="PlaySoundsVCViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I07-2S-5cz"/>
                         <viewControllerLayoutGuide type="bottom" id="M2a-74-DIF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GZm-lw-vDy">
+                    <view key="view" contentMode="scaleToFill" id="GZm-lw-vDy" customClass="pl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

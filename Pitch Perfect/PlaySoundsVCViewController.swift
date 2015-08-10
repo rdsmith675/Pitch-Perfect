@@ -39,14 +39,14 @@ class PlaySoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func slowPlayButton(sender: UIButton) {
         
 
-            resetAudio()
+        
             playAudioWithVariableRate(0.5)
     
     }
     
     @IBAction func fastPlayButton(sender: UIButton) {
       
-            resetAudio()
+        
             playAudioWithVariableRate(2.0)
         
         
@@ -54,13 +54,13 @@ class PlaySoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func playChipmunkSound(sender: UIButton) {
         
-            resetAudio()
+        
             playAudioWithVariablePitch(1000)
         
     }
 
     @IBAction func darthVaderSound(sender: UIButton) {
-        resetAudio()
+    
         playAudioWithVariablePitch(-1000)
     }
     @IBAction func stopButton(sender: UIButton) {
@@ -73,6 +73,8 @@ class PlaySoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     func playAudioWithVariablePitch(pitch: Float){
+        
+        resetAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -99,6 +101,7 @@ class PlaySoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playAudioWithVariableRate(rate: Float) {
+        resetAudio()
         
         audioPlayer.currentTime = 0.0
         var changeAudioRate = audioPlayer
@@ -117,15 +120,5 @@ class PlaySoundsVCViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
